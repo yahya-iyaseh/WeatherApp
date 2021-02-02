@@ -1,3 +1,4 @@
+// the link for the weather api from (accuweather)
 const key = 	'MT9UnClOvUx44A0NjpFPmWTblXF7ZLrS';
 
 // get weather info 
