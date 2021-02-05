@@ -64,6 +64,7 @@ form.addEventListener('submit', e => {
 
  // to get city name and trim any space from firt and last of the string
  const city = form.city.value.trim();
+
  // to reset the form input (delete the value that we put it in the input)
  form.reset();
  //call updateCity and passes the name that we take it from the input 
@@ -75,4 +76,13 @@ form.addEventListener('submit', e => {
  })
  .catch(err => console.log(err));
 
+  // store city in local Storage
+  localStorage.setItem('city',city);
 });
+// if we have a city in the local Storage we update the page without 
+// have user to enter city names
+if(localStorage.getItem('city')){
+  updateCity(localStorage.getItem('city'))
+  .then(data => updateUi(data))
+  .catch(err => console.log(err));
+}
